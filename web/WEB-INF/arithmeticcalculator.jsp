@@ -13,13 +13,13 @@
     </head>
     <body>
         <h1>Arithmetic Calculator</h1>
-        <form>
+        <form action = "arithmetic" method = "post">
             First: <input type ="text" name ="first" value ="${first}"><br>
             Second: <input type ="text" name ="second" value ="${second}"><br>
-            <input type ="button" value = "+">
-            <input type ="button" value = "-">
-            <input type ="button" value = "*">
-            <input type ="button" value = "%"><br>
+            <input type ="submit" value = "+" name = "calcType">
+            <input type ="submit" value = "-" name = "calcType">
+            <input type ="submit" value = "*" name = "calcType">
+            <input type ="submit" value = "%" name = "calcType"><br>
         </form>
             <p>
                 Result: ${text}
