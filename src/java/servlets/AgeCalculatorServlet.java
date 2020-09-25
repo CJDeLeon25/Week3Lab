@@ -53,7 +53,15 @@ public class AgeCalculatorServlet extends HttpServlet {
             getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
         }
         else{
-             int calc = Integer.parseInt(age) + 1;
+            int calc = 0;
+            try{
+                calc = Integer.parseInt(age) + 1;
+            }
+            catch(NumberFormatException e){
+                request.setAttribute("text","Please enter a number");
+                getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
+            }
+             
              request.setAttribute("text","Your age next birthday is " + calc);
              request.setAttribute("age",Integer.parseInt(age));
              getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
